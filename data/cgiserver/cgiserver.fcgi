@@ -16,4 +16,4 @@ def index():
     return send_file('./static/index.html')
 
 if __name__ == '__main__':
-    WSGIServer(CGIRootFix(app)).run(
+    WSGIServer(CGIRootFix(app)).run()
