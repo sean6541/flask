@@ -6,6 +6,8 @@ app = Flask(__name__)
 from werkzeug.contrib.fixers import CGIRootFix
 from flask.helpers import send_file
 
+app.use_x_sendfile = True
+
 @app.route('/<path:path>.<string:ext>')
 def main(**kwargs):
     path = './static/' + kwargs['path'] + '.' + kwargs['ext']
