@@ -8,9 +8,9 @@ from flask.helpers import send_file
 
 app.use_x_sendfile = True
 
-@app.route('/<path:path>.<string:ext>')
+@app.route('/<path:path>')
 def main(**kwargs):
-    path = './static/' + kwargs['path'] + '.' + kwargs['ext']
+    path = './static/' + kwargs['path']
     return send_file(path)
 
 @app.route('/')
