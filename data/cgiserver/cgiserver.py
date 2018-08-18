@@ -8,7 +8,7 @@ app.use_x_sendfile = True
 
 @app.route('/<path:path>')
 def main(**kwargs):
-    path = './static/' + kwargs['path']
+    path = '/cgiserver/static/' + kwargs['path']
     if os.path.isfile(path):
         return send_file(path)
     else:
@@ -16,7 +16,7 @@ def main(**kwargs):
 
 @app.route('/')
 def index():
-    path = './static/index.html'
+    path = '/cgiserver/static/index.html'
     if os.path.isfile(path):
         return send_file(path)
     else:
